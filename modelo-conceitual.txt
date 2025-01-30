@@ -1,0 +1,8 @@
+1. Modelo Conceitual
+O modelo conceitual é uma representação abstrata dos dados necessários para o sistema. Como mencionado, o sistema irá registrar transações realizadas nos terminais de autoatendimento, contendo as seguintes informações para cada movimentação:
+* id_movimentacao: Identificador único da transação.
+* numero_caixa: Identificador do caixa eletrônico onde a transação foi realizada.
+* tipo_transacao: Tipo da transação (ex depósito, saque, transferência, etc.).
+* valor. Valor da transação.
+* status: Status da transação (ex concluída, pendente, cancelada).
+Com isso, temos um modelo simples e direto que armazena as movimentações financeiras realizadas.

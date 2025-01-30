@@ -1,0 +1,38 @@
+CREATE DATABASE santander;
+
+USE santander;
+
+CREATE TABLE medcaixa (
+    id_movimentacao INT PRIMARY KEY,
+    numero_caixa INT,
+    tipo_transacao VARCHAR(50),
+    valor DECIMAL(10, 2),
+    status VARCHAR(20)
+);
+
+INSERT INTO medcaixa (id_movimentacao, numero_caixa, tipo_transacao, valor, status)
+VALUES
+(1, 101, 'Saque', 150.00, 'concluída'),
+(2, 102, 'Depósito', 500.00, 'concluída'),
+(3, 103, 'Transferência', 300.00, 'pendente'),
+(4, 104, 'Saque', 100.00, 'concluída'),
+(5, 105, 'Saque', 200.00, 'concluída');
+
+CREATE VIEW transacoes_concluidas AS
+SELECT 
+    id_movimentacao, 
+    numero_caixa, 
+    tipo_transacao, 
+    valor, 
+    status
+FROM 
+    medcaixa
+WHERE 
+    status = 'concluída';
+
+
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+CREATE USER 'root'@'%' IDENTIFIED BY '123456';
